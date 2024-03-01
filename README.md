@@ -1,6 +1,5 @@
 # VisualDon-Everest
 
-
 # Choix du sujet
 Nous avons choisi de sensibiliser le public aux dangers de l'Everest avec des illustrations animées et des anecdotes pour rendre l'information plus mémorable. Nous voulons attirer l'attention sur les embouteillages mortels, la pollution croissante qui défigure cette montagne emblématique, tout en soulignant que l'Everest reste une montagne dangereuse. En utilisant des visuels dynamiques et des faits concrets, nous espérons encourager des pratiques d'alpinisme plus responsables et respectueuses de l'environnement.
 
@@ -21,7 +20,7 @@ Une de nos principales sources de données est la page Wikipédia (https://en.wi
 En plus de ces données brutes, nous souhaitons intégrer des anecdotes et des histoires pour ajouter une dimension supplémentaire à notre projet. Ces récits seront collectés à partir d'articles et de blogs par nos propres soins, afin d'enrichir notre compréhension de l'Everest et des défis auxquels les alpinistes sont confrontés.
 
 # But: qu'est-ce que vous voulez découvrir ? Des tendances ? Vous voulez explorer ou expliquer?
-Expliquer aussi comment on veut faire le graphique
+Notre objectif est de sensibiliser le public aux dangers et aux défis de l'ascension de l'Everest, tout en encourageant des pratiques d'alpinisme plus responsables. Nous prévoyons de créer un graphique interactif représentant le parcours de l'Everest, avec des points d'accès dynamiques où les utilisateurs pourront découvrir des informations sur les accidents mortels, ainsi que des anecdotes sur les défis rencontrés par les alpinistes. Cette approche permettra aux utilisateurs d'explorer librement le graphique et d'en apprendre davantage sur les risques associés à cette montagne emblématique, tout en soulignant l'importance d'une approche respectueuse de l'environnement dans l'alpinisme.
 
 # Références: Qui d'autre dans le web ou dans la recherche a utilisé ces données ? Dans quel but ? 
 Les données provenant des sources mentionnées ont été utilisées par divers médias, blogs, chercheurs ou éducateurs dans le cadre de la sensibilisation du public aux risques associés à l'ascension de l'Everest.
