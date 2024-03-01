@@ -15,7 +15,7 @@ En ce qui concerne les liens, nous avons trouvés ceux-ci qui remplissent plutô
 
 
 # Description : Comment sont structurées les données ? Parler du format, des attributs et du type de données
-Une de nos principales sources de données est la page Wikipédia (https://en.wikipedia.org/wiki/List_of_people_who_died_climbing_Mount_Everest), qui compile toutes les informations sur les décès survenus sur l'Everest. Ces données sont présentées sous forme de tableau, ce qui nécessitera de les réorganiser dans un fichier Excel pour en faciliter l'utilisation. En parallèle, nous avons également identifié un jeu de données sur Kaggle. Nous envisageons de croiser ces données avec celles de Wikipédia afin d'obtenir le maximum d'informations exploitables.
+Une de nos principales sources de données est la page Wikipédia (https://en.wikipedia.org/wiki/List_of_people_who_died_climbing_Mount_Everest), qui compile toutes les informations sur les décès survenus sur l'Everest. Ces données sont présentées sous forme de tableau, ce qui nécessitera de les réorganiser dans un fichier Excel pour en faciliter l'utilisation. En parallèle, nous avons également identifié un jeu de données sur Kaggle qui est sous format CSV. Nous envisageons de croiser ces données avec celles de Wikipédia afin d'obtenir le maximum d'informations exploitables.
 
 En plus de ces données brutes, nous souhaitons intégrer des anecdotes et des histoires pour ajouter une dimension supplémentaire à notre projet. Ces récits seront collectés à partir d'articles et de blogs par nos propres soins, afin d'enrichir notre compréhension de l'Everest et des défis auxquels les alpinistes sont confrontés.
 
