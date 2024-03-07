@@ -27,3 +27,4 @@ Les données provenant des sources mentionnées ont été utilisées par divers 
 Parmis ces intervenants, nous avons Kaggle et Statista, deux sites de statistiques qui ont mis en évidence, à travers des formats visuels (tableau et graphique en barre), ces différentes données, afin de sensibiliser leurs lecteurs.
 https://www.kaggle.com/datasets/shivamb/mount-everest-climbing-deaths
 https://www.statista.com/statistics/1387753/climber-deaths-mt-everest/
+https://as2.ftcdn.net/v2/jpg/04/32/53/41/1000_F_432534126_YvWXSPc0BcnXZKBkaFVwSAeXcP1KqxgE.jpg
