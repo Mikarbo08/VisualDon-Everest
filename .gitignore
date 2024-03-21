@@ -1,0 +1,25 @@
+
+# Ignore package-lock
+package-lock.json
+
+# Ignore node_modules directory
+/node_modules
+
+# Ignore .env files
+.env
+
+# Ignore log files
+*.log
+
+# Ignore build directories
+build/
+/dist
+out/
+target/
+
+# Ignore .vscode directory
+.vscode/
+
+
+# Parcel
+.parcel-cache
