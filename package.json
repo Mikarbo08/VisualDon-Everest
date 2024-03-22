@@ -2,11 +2,10 @@
   "name": "visualdon-everest",
   "version": "1.0.0",
   "description": "Nous avons choisi de sensibiliser le public aux dangers de l'Everest avec des illustrations animées et des anecdotes pour rendre l'information plus mémorable. Nous voulons attirer l'attention sur les embouteillages mortels, la pollution croissante qui défigure cette montagne emblématique, tout en soulignant que l'Everest reste une montagne dangereuse. En utilisant des visuels dynamiques et des faits concrets, nous espérons encourager des pratiques d'alpinisme plus responsables et respectueuses de l'environnement.",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "parcel index.html --no-cache",
+    "build": "parcel build index.html --no-cache"
   },
   "author": "",
   "license": "ISC",
