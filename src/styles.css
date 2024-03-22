@@ -37,5 +37,6 @@ svg {
     font-family: "Inika", serif;
     font-weight: 400;
     font-style: normal;
-    max-width: 25%; /* Limiter la largeur à 25% de la page */
+    max-width: 30%;
+    font-size: 12px;
 }
