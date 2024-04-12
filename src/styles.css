@@ -1,5 +1,6 @@
-body,
+css body,
 html {
+    /* position: relative;  Ensure the body or a specific container has relative positioning */
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -26,7 +27,6 @@ html {
     font-family: "Inika", serif;
     font-weight: 400;
     font-style: normal;
-
 }
 
 .paragraph-container {
@@ -41,4 +41,14 @@ html {
     font-style: normal;
     max-width: 25%;
     font-size: 12px;
+}
+
+#chart-container {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    width: 400px;
+    /* Redimensionnez selon vos besoins */
+    height: 300px;
+    /* Redimensionnez selon vos besoins */
 }

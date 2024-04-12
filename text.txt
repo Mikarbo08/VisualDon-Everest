@@ -11,14 +11,14 @@ function plotGraph(data) {
 
     // Create the chart
     const myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: years,
             datasets: [{
-                label: 'Number of deaths',
+                label: 'Number of People',
                 data: nbPersonnes,
-                borderColor: '#EA5704',
-                backgroundColor: '#EA5704',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderWidth: 1
             }]
         },
