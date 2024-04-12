@@ -1,3 +1,9 @@
+//Import
+
+import data from '../data/NbDeMortParAnnee.json';
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // Attendre que le SVG soit complètement chargé
     const svgObject = document.querySelector('.fond');
@@ -26,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-import data from '../data/NbDeMortParAnnee.json';
 
 // Function to plot the graph
 function plotGraph(data) {
