@@ -1,6 +1,5 @@
-css body,
+body,
 html {
-    /* position: relative;  Ensure the body or a specific container has relative positioning */
     margin: 0;
     padding: 0;
     width: 100vw;
