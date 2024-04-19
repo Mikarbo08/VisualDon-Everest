@@ -43,14 +43,17 @@ html {
     font-size: 12px;
 }
 
-#chart-container {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
-    width: 400px;
-    /* Redimensionnez selon vos besoins */
-    height: 300px;
-    /* Redimensionnez selon vos besoins */
+
+
+.axis text {
+    fill: white;
+}
+
+.axis path,
+.axis line {
+    fill: white;
+    stroke: white;
+    shape-rendering: crispEdges;
 }
 
 .rectangle {
