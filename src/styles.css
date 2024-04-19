@@ -1,6 +1,5 @@
-css body,
+body,
 html {
-    /* position: relative;  Ensure the body or a specific container has relative positioning */
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -41,19 +40,6 @@ html {
     font-style: normal;
     max-width: 25%;
     font-size: 12px;
-}
-
-
-
-.axis text {
-    fill: white;
-}
-
-.axis path,
-.axis line {
-    fill: white;
-    stroke: white;
-    shape-rendering: crispEdges;
 }
 
 .rectangle {
