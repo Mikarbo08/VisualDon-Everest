@@ -52,3 +52,26 @@ html {
     height: 300px;
     /* Redimensionnez selon vos besoins */
 }
+
+.rectangle {
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background-color: red;
+}
+
+.close-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.close {
+    width: 20px;
+    height: 20px;
+}
