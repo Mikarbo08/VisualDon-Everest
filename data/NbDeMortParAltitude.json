@@ -1,65 +1,78 @@
 [
     {
+        "Id": 1,
         "Nb personnes": 33,
         "Altitudes": 5380,
-        "": ""
+        "texte": "Le camp de base du mont Everest est une véritable petite ville pendant la saison d'escalade. Il dispose de toutes sortes d'installations temporaires, y compris des tentes pour dormir, des cuisines et même des lieux de culte. Des fêtes et des cérémonies religieuses sont couramment organisées ici pour bénir les expéditions avant de s'attaquer à la montagne."
     },
     {
+        "Id": 2,
         "Nb personnes": 45,
         "Altitudes": 5500,
-        "": ""
+        "texte": "L'aéroport de Lukla, également connu sous le nom de Tenzing-Hillary Airport, est célèbre pour être l'un des aéroports les plus dangereux au monde. Situé au Népal, il est le point de départ principal pour ceux qui visitent la région de l'Everest. Sa piste mesure seulement 527 mètres de long et est perchée à une altitude de 2 845 mètres, ce qui complique les atterrissages et les décollages. La piste est inclinée et se termine par un précipice, ajoutant à la difficulté. De plus, les conditions météorologiques imprévisibles augmentent les risques d'accidents. Les pilotes opérant à Lukla sont hautement qualifiés pour naviguer dans ces conditions extrêmes."
     },
     {
+        "Id": 3,
         "Nb personnes": 12,
         "Altitudes": 6150,
-        "": ""
+        "texte": "Chaque printemps, les alpinistes affrontent divers dangers pour atteindre l'Everest, y compris le manque d'accès à Internet. Grâce à Everest Link, une connexion wifi fiable est désormais disponible au camp de base, offrant des services essentiels et des consultations médicales à distance. Tsering Gyaltsen Sherpa, l'entrepreneur derrière cette initiative, a transformé le Khumbu en introduisant la connectivité. Malgré les défis techniques et environnementaux, Everest Link permet aux alpinistes de rester en contact avec leurs proches et de bénéficier d'une connexion Internet vitale en haute altitude."
     },
     {
+        "Id": 4,
         "Nb personnes": 15,
         "Altitudes": 6350,
-        "": ""
+        "texte": "Situé dans la zone périlleuse connue sous le nom de Valley of Silence, le Camp I est particulièrement vulnérable aux avalanches provenant des pentes supérieures. En 2015, des avalanches déclenchées par le grand tremblement de terre népalais ont causé d'importants dégâts à ce camp."
     },
     {
+        "Id": 5,
         "Nb personnes": 9,
         "Altitudes": 6500,
-        "": ""
+        "texte": "Le Camp II est établi dans une zone appelée le Cwm Occidental, un cirque glaciaire protégé par les vents. Ce camp sert souvent de base avancée pour les expéditions car il est relativement sûr et permet aux alpinistes de s'acclimater avant de poursuivre plus haut."
     },
     {
+        "Id": 6,
         "Nb personnes": 21,
         "Altitudes": 7020,
-        "": ""
+        "texte": "Le mont Everest, avec ses conditions extrêmes et ses risques élevés, est aussi le dernier repos pour de nombreux alpinistes qui périssent en tentant de conquérir son sommet. Les corps de ces grimpeurs, souvent impossibles à récupérer en raison de l'environnement périlleux, deviennent parfois des repères macabres pour les autres alpinistes. Ces points de repère involontaires soulignent les dangers mortels de l'ascension de cette montagne imposante."
     },
     {
+        "Id": 7,
         "Nb personnes": 15,
         "Altitudes": 7300,
-        "": ""
+        "texte": "Au camp de base sud du mont Everest, situé à une altitude de 5 364 mètres, se trouve une des toilettes les plus hautes du monde. Cette installation est une toilette à compost, conçue pour minimiser l'impact environnemental dans cette région à haute altitude où les conditions rendent les infrastructures sanitaires traditionnelles impraticables."
     },
     {
+        "Id": 8,
         "Nb personnes": 6,
         "Altitudes": 7700,
-        "": ""
+        "": "Le Camp III est attaché à la face du Lhotse, nécessitant l'utilisation de cordes fixes pour y accéder. C'est ici que les alpinistes commencent réellement à ressentir les effets de l'altitude et doivent utiliser des bouteilles d'oxygène supplémentaires pour dormir et récupérer."
     },
     {
+        "Id": 9,
         "Nb personnes": 28,
         "Altitudes": 7900,
-        "": ""
+        "texte": "Situé au Col Sud, le Camp IV est aussi appelé le camp de la mort en raison des extrêmes conditions météorologiques et de l'altitude. C'est le dernier camp avant le sommet. Les alpinistes y font souvent une pause pour attendre une fenêtre météorologique favorable avant de tenter l'ascension finale."
     },
     {
+        "Id": 10,
         "Nb personnes": 23,
         "Altitudes": 8200,
         "": ""
     },
     {
+        "Id": 11,
         "Nb personnes": 41,
         "Altitudes": 8516,
-        "": ""
+        "texte": "Le mont Everest, malgré son statut de plus haut sommet du monde, est confronté à un problème majeur de pollution. Il est souvent décrit comme la plus haute poubelle du monde en raison des tonnes de déchets accumulés au fil des années. Ces détritus sont laissés par les nombreuses expéditions d'escalade et incluent des bouteilles d'oxygène vides, du matériel d'escalade usagé, des emballages alimentaires et d'autres débris. Ces déchets ne se dégradent pas facilement en raison des conditions extrêmes de l'altitude et du froid, ce qui pose un sérieux problème environnemental et esthétique pour cette montagne emblématique."
     },
     {
+        "Id": 12,
         "Nb personnes": 49,
         "Altitudes": 8849,
-        "": ""
+        "texte": "Les embouteillages au sommet du mont Everest sont devenus un phénomène inquiétant, reflétant les défis et les dangers de l'escalade de masse. Durant la courte fenêtre de mai, où les conditions sont idéales, des files d'attente se forment sur les passages étroits menant au sommet. Cette congestion peut forcer les alpinistes à passer plus de temps dans la zone de la mort, au-dessus de 8 000 mètres, où l'oxygène se fait rare et chaque minute supplémentaire augmente les risques de problèmes graves comme l'hypothermie ou les œdèmes. Ce phénomène souligne l'importance d'une régulation accrue pour garantir la sécurité et la durabilité de l'ascension du plus haut sommet du monde."
     },
     {
+        "Id": 13,
         "Nb personnes": 35,
         "Altitudes": "X",
         "": ""
