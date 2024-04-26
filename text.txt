@@ -1,36 +1,95 @@
-import data from '../data/NbDeMortParAnnee.json';
-
-// Function to plot the graph
-function plotGraph(data) {
-    // Extract years and number of people
-    const years = data.map(item => item.Annees);
-    const nbPersonnes = data.map(item => item.NbPersonnes);
-
-    // Get the canvas element
-    const ctx = document.getElementById('myChart').getContext('2d');
-
-    // Create the chart
-    const myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: years,
-            datasets: [{
-                label: 'Number of People',
-                data: nbPersonnes,
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow: hidden;
 }
 
-// Call the function to plot the graph
-plotGraph(data);
+.fond {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: auto;
+    z-index: -1;
+}
+
+.title-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.paragraph-container {
+    position: absolute;
+    top: 65px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 25%;
+    font-size: 12px;
+}
+
+
+
+.rectangle {
+    position: fixed;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    overflow: hidden;
+}
+
+.close-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.close-container img {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.image-container img {
+    max-width: 70%;
+    height: auto;
+}
+
+.titre p,
+.paragraphe p,
+.altitude p,
+.morts p {
+    margin: 0;
+    /* Supprimer les marges par défaut */
+}
+
+<script src="script.js"></script>

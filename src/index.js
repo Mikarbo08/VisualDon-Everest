@@ -1,45 +1,77 @@
 
 // Import du fichier de données
 import data from '../data/NbDeMortParAnnee.json';
-
-// Attendre que le SVG soit complètement chargé
+// Import des données JSON
+import dataAlt from '../data/NbDeMortParAltitude.json';
 
 document.addEventListener("DOMContentLoaded", function () {
     const svgObject = document.querySelector('.fond');
     svgObject.addEventListener("load", function () {
         const svgDocument = svgObject.contentDocument;
 
-        // Sélectionner l'élément <path> dans le document SVG
-        const sommet = svgDocument.getElementById("Sommet");
+        // Création d'un dictionnaire pour associer les IDs avec les données
+        const infoMap = {};
+        dataAlt.forEach(item => {
+            const id = item.Titre.replace(/\s+/g, ""); // Enlever les espaces
+            infoMap[id] = item;
+        });
 
-        // Sélection du rectangle rouge
-        const rectangleRouge = document.querySelector(".rectangle");
-
-        // Ajout d'un gestionnaire de clic sur l'élément <path>
-        sommet.addEventListener("click", function () {
-            // Afficher le rectangle rouge en changeant son style display
-            rectangleRouge.style.display = "block";
+        // Attacher des gestionnaires de clic pour chaque groupe par ID
+        ['Sommet', 'CampBase', 'Camp4', 'Camp1', 'Camp2', 'Camp3'].forEach(id => {
+            const element = svgDocument.getElementById(id);
+            if (element && infoMap[id]) {
+                element.style.cursor = "pointer"; // Change le curseur pour indiquer que c'est cliquable
+                element.addEventListener("click", function () {
+                    displayInfo(infoMap[id]);
+                });
+            }
         });
     });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-    const rectangle = document.querySelector(".rectangle");
-    const closeContainer = document.querySelector(".close-container");
+    // Fonction pour afficher les informations
+    function displayInfo(info) {
+        const rectangle = document.querySelector(".rectangle");
+        const titreElement = document.querySelector(".titre p");
+        const paragrapheElement = document.querySelector(".paragraphe p");
+        const altitudeElement = document.querySelector(".altitude h1");
+        const mortsElement = document.querySelector(".morts h1");
+        const imageElement = document.querySelector(".image-container img");
 
-    // Ajout d'un gestionnaire de clic sur l'élément close-container
-    closeContainer.addEventListener("click", function () {
-        rectangle.style.display = "none";
+        // Mise à jour des éléments avec les données
+        titreElement.textContent = info.Titre;
+        paragrapheElement.textContent = info.Texte;
+        altitudeElement.textContent = `${info.Altitudes} m`;
+        mortsElement.textContent = `${info['Nb personnes']}`;
+        imageElement.src = `/${info['Image']}.`;
+        imageElement.alt = `Image de ${info.Titre}`;
+
+        // Afficher le rectangle
+        rectangle.style.display = "flex";
+    }
+
+    // Gestionnaire pour fermer le rectangle
+    document.querySelector(".close-container").addEventListener("click", function () {
+        document.querySelector(".rectangle").style.display = "none";
     });
 });
 
-// Créer l'élément SVG
-const svg = d3.select("#chart");
 
-// Définir les marges et les dimensions du graphique
-const margin = { top: 20, right: 20, bottom: 75, left: 50 };
-const width = +svg.attr("width") - margin.left - margin.right;
-const height = +svg.attr("height") - margin.top - margin.bottom;
+
+
+
+
+
+
+//Code pour le graphique
+// Créer l'élément SVG avec des dimensions plus petites
+const svg = d3.select("#chart")
+    .attr("width", 500)  // Nouvelle largeur du SVG
+    .attr("height", 300); // Nouvelle hauteur du SVG
+
+// Définir les marges et les dimensions du graphique plus petites
+const margin = { top: 10, right: 10, bottom: 60, left: 40 };
+const width = svg.attr("width") - margin.left - margin.right;
+const height = svg.attr("height") - margin.top - margin.bottom;
 
 // Créer l'échelle des axes
 const xScale = d3.scaleBand()
@@ -65,7 +97,7 @@ svg.append("g")
     .attr("fill", "#EA5704");
 
 // Définir les étiquettes à afficher sur l'axe x (par exemple, chaque deuxième année)
-const tickValues = data.map(d => d.Annees).filter((d, i) => i % 5 === 0);
+const tickValues = data.map(d => d.Annees).filter((d, i) => i % 10 === 0);
 
 // Ajouter les axes au graphique
 const yAxis = svg.append("g")
@@ -94,16 +126,16 @@ svg.selectAll(".domain") // Changer la couleur des lignes des axes
 // Ajouter un titre au graphique
 svg.append("text")
     .attr("x", margin.left) // Position X du titre (marge gauche)
-    .attr("y", height + margin.top + 55) // Position Y du titre (sous l'axe x)
+    .attr("y", height + margin.top + 42) // Position Y du titre (sous l'axe x)
     .attr("text-anchor", "start") // Alignement du texte (début)
     .style("fill", "black") // Couleur du texte
-    .style("font-size", "28px") // Taille de la police
+    .style("font-size", "24px") // Taille de la police
     .style("font-family", "Inika, serif") // Changer la police de caractères
     .text("Nombre de morts par année");
 
 // Ajouter une légende à l'axe y
 svg.append("text")
-    .attr("transform", `translate(${margin.left - 25}, ${margin.top}) rotate(-90)`) // Translation et rotation pour placer le texte à gauche de l'axe y
+    .attr("transform", `translate(${margin.left - 25}, ${margin.top + 30}) rotate(-90)`) // Translation et rotation pour placer le texte à gauche de l'axe y
     .attr("text-anchor", "middle") // Alignement du texte au milieu
     .style("fill", "black") // Couleur du texte
     .style("font-size", "14px") // Taille de la police
