@@ -60,7 +60,7 @@
         "Titre": "Anecdote",
         "Nb personnes": 6,
         "Altitudes": 7700,
-        "Texte": "Le mont Everest, avec ses conditions extrêmes et ses risques élevés, est aussi le dernier repos pour de nombreux alpinistes qui périssent en tentant de conquérir son sommet. Les corps de ces grimpeurs, souvent impossibles à récupérer en raison de l'environnement périlleux, deviennent parfois des repères macabres pour les autres alpinistes. Ces points de repère involontaires soulignent les dangers mortels de l'ascension de cette montagne imposante.",
+        "Texte": "Le mont Everest, avec ses conditions extrêmes et ses risques élevés, est aussi le dernier repos pour de nombreux alpinistes qui périssent en tentant de conquérir son sommet. Les corps de ces grimpeurs, souvent impossibles à récupérer en raison de l'environnement périlleux, deviennent parfois des repères macabres pour les autres alpinistes. Sur l'image à côté, vous pouvez voir un mort surnommé Green Boots, un point de repère connu de cette montagne, soulignant ainsi les dangers mortels de son ascension imposante.",
         "Image": "assets/img/Morts.jpg"
     },
     {
@@ -76,7 +76,7 @@
         "Titre": "Anecdote",
         "Nb personnes": 23,
         "Altitudes": 8200,
-        "Texte": "",
+        "Texte": "En 1953, une expédition britannique menée par le colonel John Hunt s'est lancée dans une quête pour conquérir l'Everest. Parmi les membres se trouvaient Sir Edmund Hillary, un néo-zélandais, et Tenzing Norgay, un sherpa népalais. Le 29 mai, après des efforts acharnés, Hillary et Norgay ont atteint ensemble le sommet mythique de l'Everest, à 8 848 mètres d'altitude. Leur réussite épique a captivé le monde entier, devenant un symbole d'endurance, de courage et de collaboration internationale.",
         "Image": "assets/img/first_climber.jpg"
     },
     {

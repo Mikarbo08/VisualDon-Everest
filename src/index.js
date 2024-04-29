@@ -17,10 +17,8 @@ import imgPoubelle from '../assets/img/Poubelle.jpg';
 import imgSommet from '../assets/img/Sommet.jpg';
 import imgToilettes from '../assets/img/toilettes.jpg';
 
-// Maintenant que toutes les images sont importées, on peut les utiliser directement dans le code
 document.addEventListener("DOMContentLoaded", function () {
     const svgObject = document.querySelector('.fond');
-    const svgLines = document.querySelectorAll('.cls-1'); // Sélectionner les lignes SVG
     svgObject.addEventListener("load", function () {
         const svgDocument = svgObject.contentDocument;
 
@@ -51,12 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Fonction pour afficher les informations et ajuster les couleurs
     function displayInfo(info) {
         const rectangle = document.querySelector(".rectangle");
         const texteElements = rectangle.querySelectorAll("p, h1");
-        const svgLines = document.querySelectorAll(".cls-1"); // Sélectionner les lignes SVG pour modifier le stroke
         const imageElement = document.querySelector(".image-container img");
+        const closeButton = document.querySelector(".close-container img");
+        const closeButtonWhite = document.querySelector(".close-container-white img");
 
         // Mise à jour des contenus
         rectangle.querySelector(".titre p").textContent = info.data.Titre;
@@ -66,28 +64,27 @@ document.addEventListener("DOMContentLoaded", function () {
         imageElement.src = info.img;
         imageElement.alt = `Image de ${info.data.Titre}`;
 
-        // Changement des styles en fonction du titre
+        // Changement des styles et gestion des boutons de fermeture
         if (info.data.Titre === "Anecdote") {
             rectangle.style.backgroundColor = "#003060";
             texteElements.forEach(element => element.style.color = "white");
-            svgLines.forEach(line => line.style.stroke = "white"); // Changer la couleur des lignes SVG en blanc
+            closeButton.style.display = "none";           // Cache le bouton par défaut
+            closeButtonWhite.style.display = "block";    // Affiche le bouton blanc
         } else {
             rectangle.style.backgroundColor = "white";
             texteElements.forEach(element => element.style.color = "black");
-            svgLines.forEach(line => line.style.stroke = "black"); // Rétablir la couleur des lignes SVG en noir
+            closeButton.style.display = "block";         // Affiche le bouton par défaut
+            closeButtonWhite.style.display = "none";     // Cache le bouton blanc
         }
 
         rectangle.style.display = "flex";
     }
-
-
-    // Gestionnaire pour fermer le rectangle
-    document.querySelector(".close-container").addEventListener("click", () => {
-        document.querySelector(".rectangle").style.display = "none";
+    document.querySelectorAll(".close-container, .close-container-white img").forEach(button => {
+        button.addEventListener("click", () => {
+            document.querySelector(".rectangle").style.display = "none";
+        });
     });
 });
-
-
 
 
 

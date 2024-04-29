@@ -70,19 +70,34 @@ html {
     padding-right: 70px;
 }
 
-.close-container {
+.close-container img {
     position: absolute;
     top: 0;
     right: 0;
     padding: 20px;
-}
-
-/* .close-container img {
     display: block;
     float: left;
     width: 20px;
     height: 20px;
-} */
+}
+
+.close-container-white img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+}
+
+.close-container img,
+.close-container-white img {
+    cursor: pointer;
+    /* Style du curseur sur les images de fermeture */
+}
+
 
 .image-container {
     display: flex;
