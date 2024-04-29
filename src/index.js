@@ -1,62 +1,91 @@
-
-// Import du fichier de données
+// Import des fichiers de données
 import data from '../data/NbDeMortParAnnee.json';
-// Import des données JSON
 import dataAlt from '../data/NbDeMortParAltitude.json';
 
+// Import individuel des images
+import imgAeroport from '../assets/img/Aeroport.jpg';
+import imgCamp1 from '../assets/img/Camp1.jpg';
+import imgCamp2 from '../assets/img/Camp2.jpeg';
+import imgCamp3 from '../assets/img/Camp3.jpg';
+import imgCamp4 from '../assets/img/Camp4.jpg';
+import imgCampBase from '../assets/img/CampBase.jpg';
+import imgEverest from '../assets/img/Everest.jpg';
+import imgFirstClimber from '../assets/img/first_climber.jpg';
+import imgInternet from '../assets/img/Internet.jpg';
+import imgMorts from '../assets/img/Morts.jpg';
+import imgPoubelle from '../assets/img/Poubelle.jpg';
+import imgSommet from '../assets/img/Sommet.jpg';
+import imgToilettes from '../assets/img/toilettes.jpg';
+
+// Maintenant que toutes les images sont importées, on peut les utiliser directement dans le code
 document.addEventListener("DOMContentLoaded", function () {
     const svgObject = document.querySelector('.fond');
+    const svgLines = document.querySelectorAll('.cls-1'); // Sélectionner les lignes SVG
     svgObject.addEventListener("load", function () {
         const svgDocument = svgObject.contentDocument;
 
-        // Création d'un dictionnaire pour associer les IDs avec les données
-        const infoMap = {};
-        dataAlt.forEach(item => {
-            const id = item.Titre.replace(/\s+/g, ""); // Enlever les espaces
-            infoMap[id] = item;
-        });
+        // Création d'un dictionnaire pour associer les IDs avec les données et images spécifiques
+        const infoMap = {
+            Sommet: { data: dataAlt.find(item => item.Titre === 'Sommet'), img: imgSommet },
+            CampBase: { data: dataAlt.find(item => item.Titre === 'Camp de base'), img: imgCampBase },
+            Camp1: { data: dataAlt.find(item => item.Titre === 'Camp I'), img: imgCamp1 },
+            Camp2: { data: dataAlt.find(item => item.Titre === 'Camp II'), img: imgCamp2 },
+            Camp3: { data: dataAlt.find(item => item.Titre === 'Camp III'), img: imgCamp3 },
+            Camp4: { data: dataAlt.find(item => item.Titre === 'Camp IV'), img: imgCamp4 },
+            Triangle1: { data: dataAlt.find(item => item.Id === 2), img: imgToilettes },
+            Triangle2: { data: dataAlt.find(item => item.Id === 4), img: imgAeroport },
+            Triangle3: { data: dataAlt.find(item => item.Id === 6), img: imgInternet },
+            Triangle4: { data: dataAlt.find(item => item.Id === 8), img: imgMorts },
+            Triangle5: { data: dataAlt.find(item => item.Id === 10), img: imgFirstClimber },
+            Triangle6: { data: dataAlt.find(item => item.Id === 11), img: imgPoubelle },
+            Rond: { data: dataAlt.find(item => item.Id === 13), img: imgEverest },
+        };
 
         // Attacher des gestionnaires de clic pour chaque groupe par ID
-        ['Sommet', 'CampBase', 'Camp4', 'Camp1', 'Camp2', 'Camp3'].forEach(id => {
+        Object.keys(infoMap).forEach(id => {
             const element = svgDocument.getElementById(id);
-            if (element && infoMap[id]) {
-                element.style.cursor = "pointer"; // Change le curseur pour indiquer que c'est cliquable
-                element.addEventListener("click", function () {
-                    displayInfo(infoMap[id]);
-                });
+            if (element && infoMap[id].data) {
+                element.style.cursor = "pointer";
+                element.addEventListener("click", () => displayInfo(infoMap[id]));
             }
         });
     });
 
-    // Fonction pour afficher les informations
+    // Fonction pour afficher les informations et ajuster les couleurs
     function displayInfo(info) {
         const rectangle = document.querySelector(".rectangle");
-        const titreElement = document.querySelector(".titre p");
-        const paragrapheElement = document.querySelector(".paragraphe p");
-        const altitudeElement = document.querySelector(".altitude h1");
-        const mortsElement = document.querySelector(".morts h1");
+        const texteElements = rectangle.querySelectorAll("p, h1");
+        const svgLines = document.querySelectorAll(".cls-1"); // Sélectionner les lignes SVG pour modifier le stroke
         const imageElement = document.querySelector(".image-container img");
 
-        // Mise à jour des éléments avec les données
-        titreElement.textContent = info.Titre;
-        paragrapheElement.textContent = info.Texte;
-        altitudeElement.textContent = `${info.Altitudes} m`;
-        mortsElement.textContent = `${info['Nb personnes']}`;
-        imageElement.src = `/${info['Image']}.`;
-        imageElement.alt = `Image de ${info.Titre}`;
+        // Mise à jour des contenus
+        rectangle.querySelector(".titre p").textContent = info.data.Titre;
+        rectangle.querySelector(".paragraphe p").textContent = info.data.Texte;
+        rectangle.querySelector(".altitude h1").textContent = `${info.data.Altitudes} m`;
+        rectangle.querySelector(".morts h1").textContent = `${info.data['Nb personnes']}`;
+        imageElement.src = info.img;
+        imageElement.alt = `Image de ${info.data.Titre}`;
 
-        // Afficher le rectangle
+        // Changement des styles en fonction du titre
+        if (info.data.Titre === "Anecdote") {
+            rectangle.style.backgroundColor = "#003060";
+            texteElements.forEach(element => element.style.color = "white");
+            svgLines.forEach(line => line.style.stroke = "white"); // Changer la couleur des lignes SVG en blanc
+        } else {
+            rectangle.style.backgroundColor = "white";
+            texteElements.forEach(element => element.style.color = "black");
+            svgLines.forEach(line => line.style.stroke = "black"); // Rétablir la couleur des lignes SVG en noir
+        }
+
         rectangle.style.display = "flex";
     }
 
+
     // Gestionnaire pour fermer le rectangle
-    document.querySelector(".close-container").addEventListener("click", function () {
+    document.querySelector(".close-container").addEventListener("click", () => {
         document.querySelector(".rectangle").style.display = "none";
     });
 });
-
-
-
 
 
 

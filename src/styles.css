@@ -77,12 +77,12 @@ html {
     padding: 20px;
 }
 
-.close-container img {
+/* .close-container img {
     display: block;
     float: left;
     width: 20px;
     height: 20px;
-}
+} */
 
 .image-container {
     display: flex;

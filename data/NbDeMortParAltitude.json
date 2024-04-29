@@ -99,7 +99,7 @@
         "Id": 13,
         "Titre": "Anecdote",
         "Nb personnes": 35,
-        "Altitudes": "X",
+        "Altitudes": "Inconnue",
         "Texte": "Au sommet de l'Everest, plusieurs alpinistes ont disparu sans laisser de traces. Perdus dans des endroits inaccessibles, que ce soit sur des pentes raides ou dans des crevasses, on ne sait pas exactement où ils sont morts. Ces disparitions nous rappellent les dangers extrêmes de cette montagne. Chaque personne qui tente l'ascension de l'Everest doit se souvenir de ces risques, face à une nature à la fois magnifique et impitoyable.",
         "Image": "assets/img/Everest.jpg"
     }
