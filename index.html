@@ -28,11 +28,16 @@
         </div>
     </div>
 
-    <object type="image/svg+xml" data="assets/img/EverestVectoriseV4.svg" width="100%" height="100%" class="fond">
+
+    <object type="image/svg+xml" data="assets/img/EverestVectoriseV8.svg" width="100%" height="100%" class="fond">
         Votre navigateur ne prend pas en charge SVG
     </object>
 
+
     <svg id="chart" style="position: absolute; bottom: 0; left: 0;" width="800" height="400"></svg>
+
+    <div id="fond-noir"></div>
+
     <div class="rectangle">
         <div class="close-container">
             <img src="/assets/img/close.svg" alt="Fermer l'élément" class="close">
@@ -65,10 +70,10 @@
     </div>
 
 
-    <svg id="chart" style="position: absolute; bottom: 0; left: 0;" width="400" height="200"></svg>
 
-    <!-- Conteneur pour l'info-bulle -->
-    <div class="tooltip" style="opacity: 0;"></div>
+    <div id="tooltip"
+        style="position: absolute; display: none; padding: 10px; background: rgba(0, 0, 0, 0.6); color: white; border-radius: 4px; pointer-events: none;">
+    </div>
 
 </body>
 

@@ -49,17 +49,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+
     function displayInfo(info) {
         const rectangle = document.querySelector(".rectangle");
         const texteElements = rectangle.querySelectorAll("p, h1");
         const imageElement = document.querySelector(".image-container img");
         const closeButton = document.querySelector(".close-container img");
         const closeButtonWhite = document.querySelector(".close-container-white img");
+        document.getElementById("fond-noir").style.display = "block";
 
         // Mise à jour des contenus
         rectangle.querySelector(".titre p").textContent = info.data.Titre;
         rectangle.querySelector(".paragraphe p").textContent = info.data.Texte;
-        rectangle.querySelector(".altitude h1").textContent = `${info.data.Altitudes} m`;
+        if (isNaN(info.data.Altitudes)) {
+            rectangle.querySelector(".altitude h1").textContent = `${info.data.Altitudes}`;
+        } else {
+            rectangle.querySelector(".altitude h1").textContent = `${info.data.Altitudes} m`;
+        }
         rectangle.querySelector(".morts h1").textContent = `${info.data['Nb personnes']}`;
         imageElement.src = info.img;
         imageElement.alt = `Image de ${info.data.Titre}`;
@@ -82,8 +88,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".close-container, .close-container-white img").forEach(button => {
         button.addEventListener("click", () => {
             document.querySelector(".rectangle").style.display = "none";
+            document.getElementById("fond-noir").style.display = "none";
         });
     });
+
 });
 
 
@@ -146,7 +154,7 @@ xAxis.selectAll("text")
 xAxis.selectAll("line")
     .attr("stroke", "black"); // Changer la couleur des barres en noir
 
-svg.selectAll(".domain") // Changer la couleur des lignes des axes
+svg.selectAll(".domain")
     .attr("stroke", "black"); // Changer la couleur du contour en noir
 
 // Ajouter un titre au graphique
@@ -157,7 +165,7 @@ svg.append("text")
     .style("fill", "black") // Couleur du texte
     .style("font-size", "24px") // Taille de la police
     .style("font-family", "Inika, serif") // Changer la police de caractères
-    .text("Nombre de morts par année");
+    .text("Nombre de décès par année");
 
 // Ajouter une légende à l'axe y
 svg.append("text")
@@ -177,3 +185,62 @@ svg.append("text")
     .style("font-size", "14px") // Taille de la police
     .style("font-family", "Inika, serif") // Changer la police de caractères
     .text("Années");
+
+
+// Sélectionnez l'élément infobulle et initialisez-le avec D3
+const tooltip = d3.select("#tooltip");
+
+// Ajouter les barres au graphique
+const bars = svg.append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", d => xScale(d.Annees))
+    .attr("y", d => yScale(Math.max(d.NbPersonnes, 0)))
+    .attr("width", xScale.bandwidth())
+    .attr("height", d => Math.max(height - yScale(d.NbPersonnes), 1))
+    .attr("fill", "#EA5704")
+    .on("mouseover", mouseover)
+    .on("mousemove", mousemove)
+    .on("mouseout", mouseout);
+
+// Ajouter des boules pour les barres avec une cause
+const markers = svg.append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .selectAll(".marker")
+    .data(data.filter(d => d.Cause)) // Filtre pour obtenir uniquement les données avec une cause
+    .enter().append("circle")
+    .attr("class", "marker")
+    .attr("cx", d => xScale(d.Annees) + xScale.bandwidth() / 2) // Centrer le cercle sur la barre
+    .attr("cy", d => yScale(d.NbPersonnes) - 10) // Placer au-dessus de la barre
+    .attr("r", 5) // Rayon du cercle
+    .style("fill", "#15a8fb") // Couleur bleue pour plus de visibilité
+    .on("mouseover", mouseover)
+    .on("mousemove", mousemove)
+    .on("mouseout", mouseout);
+
+// Fonctions pour gérer les événements de la souris
+function mouseover(event, d) {
+    let tooltipHtml = `<strong>Année: ${d.Annees}</strong><br>Nombre de Décès: ${d.NbPersonnes}`;
+    if (d.Cause) {
+        tooltipHtml += `<br>Cause: ${d.Cause}`;
+    } else if (d.NbPersonnes === 0) {
+        tooltipHtml += `<br>Aucun décès enregistré`;
+    }
+    tooltip.style("display", "block")
+        .html(tooltipHtml)
+        .style("font-family", "Inika, serif")
+        .style("left", `${event.pageX + 20}px`)
+        .style("top", `${event.pageY - 40}px`);
+}
+
+function mousemove(event, d) {
+    tooltip.style("left", `${event.pageX + 20}px`)
+        .style("top", `${event.pageY - 40}px`);
+}
+
+function mouseout() {
+    tooltip.style("display", "none");
+}

@@ -5,7 +5,8 @@
     },
     {
         "NbPersonnes": 7,
-        "Annees": 1922
+        "Annees": 1922,
+        "Cause": "Avalanche"
     },
     {
         "NbPersonnes": 0,
@@ -197,7 +198,8 @@
     },
     {
         "NbPersonnes": 7,
-        "Annees": 1970
+        "Annees": 1970,
+        "Cause": "Avalanche"
     },
     {
         "NbPersonnes": 1,
@@ -213,7 +215,8 @@
     },
     {
         "NbPersonnes": 5,
-        "Annees": 1974
+        "Annees": 1974,
+        "Cause": "Avalanche"
     },
     {
         "NbPersonnes": 3,
@@ -245,7 +248,8 @@
     },
     {
         "NbPersonnes": 11,
-        "Annees": 1982
+        "Annees": 1982,
+        "Cause": "Disparitions"
     },
     {
         "NbPersonnes": 3,
@@ -253,7 +257,8 @@
     },
     {
         "NbPersonnes": 8,
-        "Annees": 1984
+        "Annees": 1984,
+        "Cause": "Chutes"
     },
     {
         "NbPersonnes": 7,
@@ -301,7 +306,8 @@
     },
     {
         "NbPersonnes": 15,
-        "Annees": 1996
+        "Annees": 1996,
+        "Cause": "Hypotermies"
     },
     {
         "NbPersonnes": 9,
@@ -333,7 +339,8 @@
     },
     {
         "NbPersonnes": 7,
-        "Annees": 2004
+        "Annees": 2004,
+        "Cause": "Hypotermies"
     },
     {
         "NbPersonnes": 6,
@@ -373,11 +380,13 @@
     },
     {
         "NbPersonnes": 16,
-        "Annees": 2014
+        "Annees": 2014,
+        "Cause": "Avalanche"
     },
     {
         "NbPersonnes": 18,
-        "Annees": 2015
+        "Annees": 2015,
+        "Cause": "Avalanche due à un tremblement de terre"
     },
     {
         "NbPersonnes": 7,
@@ -393,11 +402,13 @@
     },
     {
         "NbPersonnes": 11,
-        "Annees": 2019
+        "Annees": 2019,
+        "Cause": "Epuisement durant la descente"
     },
     {
         "NbPersonnes": 0,
-        "Annees": 2020
+        "Annees": 2020,
+        "Cause": "Covid-19, confinement"
     },
     {
         "NbPersonnes": 4,
