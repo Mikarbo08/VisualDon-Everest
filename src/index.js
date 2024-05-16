@@ -97,13 +97,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 //Code pour le graphique
-// Créer l'élément SVG avec des dimensions plus petites
+// Créer l'élément SVG avec des dimensions plus petites// Créer l'élément SVG avec des dimensions plus grandes
 const svg = d3.select("#chart")
     .attr("width", 500)  // Nouvelle largeur du SVG
     .attr("height", 300); // Nouvelle hauteur du SVG
 
-// Définir les marges et les dimensions du graphique plus petites
-const margin = { top: 10, right: 10, bottom: 60, left: 40 };
+// Définir les marges et les dimensions du graphique plus grandes
+const margin = { top: 20, right: 20, bottom: 80, left: 60 };
 const width = svg.attr("width") - margin.left - margin.right;
 const height = svg.attr("height") - margin.top - margin.bottom;
 
@@ -160,7 +160,7 @@ svg.selectAll(".domain")
 // Ajouter un titre au graphique
 svg.append("text")
     .attr("x", margin.left) // Position X du titre (marge gauche)
-    .attr("y", height + margin.top + 42) // Position Y du titre (sous l'axe x)
+    .attr("y", height + margin.top + 60) // Position Y du titre (sous l'axe x)
     .attr("text-anchor", "start") // Alignement du texte (début)
     .style("fill", "black") // Couleur du texte
     .style("font-size", "24px") // Taille de la police
@@ -169,7 +169,7 @@ svg.append("text")
 
 // Ajouter une légende à l'axe y
 svg.append("text")
-    .attr("transform", `translate(${margin.left - 25}, ${margin.top + 30}) rotate(-90)`) // Translation et rotation pour placer le texte à gauche de l'axe y
+    .attr("transform", `translate(${margin.left - 30}, ${margin.top + height / 100}) rotate(-90)`) // Translation et rotation pour placer le texte à gauche de l'axe y
     .attr("text-anchor", "middle") // Alignement du texte au milieu
     .style("fill", "black") // Couleur du texte
     .style("font-size", "14px") // Taille de la police
@@ -178,14 +178,13 @@ svg.append("text")
 
 // Ajouter une légende à l'axe x
 svg.append("text")
-    .attr("x", margin.left - 30 + width) // Position X de la légende
-    .attr("y", height + margin.top + 35) // Position Y de la légende (sous l'axe x)
+    .attr("x", margin.left + width - 10) // Position X de la légende
+    .attr("y", height + margin.top + 40) // Position Y de la légende (sous l'axe x)
     .attr("text-anchor", "middle") // Alignement du texte au milieu
     .style("fill", "black") // Couleur du texte
     .style("font-size", "14px") // Taille de la police
     .style("font-family", "Inika, serif") // Changer la police de caractères
     .text("Années");
-
 
 // Sélectionnez l'élément infobulle et initialisez-le avec D3
 const tooltip = d3.select("#tooltip");
