@@ -95,9 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 //Code pour le graphique
-// Créer l'élément SVG avec des dimensions plus petites// Créer l'élément SVG avec des dimensions plus grandes
+// Créer l'élément SVG avec des dimensions plus grandes
 const svg = d3.select("#chart")
     .attr("width", 500)  // Nouvelle largeur du SVG
     .attr("height", 300); // Nouvelle hauteur du SVG
@@ -219,6 +218,23 @@ const markers = svg.append("g")
     .on("mouseover", mouseover)
     .on("mousemove", mousemove)
     .on("mouseout", mouseout);
+
+// Ajouter une légende pour les bulles bleues
+svg.append("circle")
+    .attr("cx", width - 310)
+    .attr("cy", height + margin.top - 213)
+    .attr("r", 7)
+    .style("fill", "#15a8fb");
+
+svg.append("text")
+    .attr("x", width - 300)
+    .attr("y", height + margin.top - 207)
+    .attr("text-anchor", "start")
+    .style("fill", "black")
+    .style("font-size", "14px")
+    .style("font-weight", "bold")
+    .style("font-family", "Inika, serif")
+    .text("Cause insolite");
 
 // Fonctions pour gérer les événements de la souris
 function mouseover(event, d) {
